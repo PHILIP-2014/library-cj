@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+<configuration>
+
+	<settings> 
+        <setting name="cacheEnabled" value="true" /> 
+        <setting name="useGeneratedKeys" value="true" /> 
+        <setting name="defaultExecutorType" value="REUSE" />  
+    </settings>
+    
+    <mappers>
+        <!-- <mapper resource="sqlmap/userAccountMapper.xml" />
+        <mapper resource="sqlmap/userProfileMapper.xml" />
+        <mapper resource="sqlmap/userInviteLogMapper.xml" />
+        <mapper resource="sqlmap/companyMapper.xml" />
+        <mapper resource="sqlmap/companyMemberMapper.xml" />
+        <mapper resource="sqlmap/contactMapper.xml" />
+        <mapper resource="sqlmap/teamMapper.xml" />
+        <mapper resource="sqlmap/teamMemberMapper.xml" /> -->
+    </mappers>
+
+</configuration>

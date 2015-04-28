@@ -6,8 +6,6 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd
 ">
 	<!-- 引入属性文件 -->
-	<context:property-placeholder location="classpath:config.properties,dbconfig.properties" />
-	<!-- 自动扫描(自动注入) -->
-	<context:component-scan base-package="com.church.service..*" />
+	<context:property-placeholder location="classpath:jdbc.properties" />
 
 </beans>

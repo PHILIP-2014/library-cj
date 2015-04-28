@@ -9,3 +9,7 @@ v1.0.0-BETA 2015-04-24 ``philip``
 v1.0.0-BETA 2015-04-25 ``philip``
 
 1. 数据库基础表设计（b_user,b_book,c_record）
+
+v1.0.0-BETA 2015-04-28 ``philip``
+
+1. 基础框架搭建完成
