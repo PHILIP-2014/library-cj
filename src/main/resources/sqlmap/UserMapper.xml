@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.church.dao.UserDao" >
+	
+	<sql id="default_column">
+		`b_user`.`id`,
+		`b_user`.`name`,
+		`b_user`.`phone`,
+		`b_user`.`password`,
+		`b_user`.`role`,
+		`b_user`.`is_verify` as isVerify,
+		`b_user`.`status`,
+		`b_user`.`gmt_create` as gmtCreate,
+		`b_user`.`gmt_modify` as gmtModify
+	</sql>
+	
+	<insert id="insert" parameterType="com.church.model.UserModel" keyProperty="id">
+		insert into b_user (
+			`name`,
+			`password`,
+			`phone`,
+			`role`,
+			`is_verify`,
+			`status`,
+			`gmt_create`,
+			`gmt_modify`)
+		values(#{name},
+			#{password},
+			#{phone},
+			#{role},
+			#{isVerify},
+			#{status},
+			now(),now())
+	</insert>
+	
+	<select id="queryOne" resultType="com.church.model.UserModel">
+		select 
+			<include refid="default_column"/>
+		from b_user
+		where id = #{id}
+	</select>
+	
+	<update id="update" parameterType="com.church.model.UserModel">
+		update b_user set
+			<if test="name != null and name != '' ">
+				name = #{name},
+			</if>
+			<if test="phone != null and phone != '' ">
+				phone = #{phone},
+			</if>
+			gmt_modified=now()
+			where id = #{id}
+	</update>
+	
+	<update id="updatePassword"  parameterType="com.church.model.UserModel">
+		update b_user set
+			password = #{password},
+			gmt_modified = now()
+		where id = #{id}
+	</update>
+	
+</mapper>

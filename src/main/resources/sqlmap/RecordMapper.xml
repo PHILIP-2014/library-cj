@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.church.dao.RecordDao" >
+	
+	<sql id="default_column">
+		`c_record`.`id`,
+		`c_record`.`bid`,
+		`c_record`.`uid`,
+		`c_record`.`flag_borrow` as flagBorrow,
+		`c_record`.`gmt_borrow` as gmtBorrow,
+		`c_record`.`gmt_to_return` as gmtToReturn,
+		`c_record`.`flag_return` as flagReturn,
+		`c_record`.`gmt_return` as gmtReturn,
+		`c_record`.`status`,
+		`c_record`.`gmt_create` as gmtCreate,
+		`c_record`.`gmt_modify` as gmtModify
+	</sql>
+	
+	<insert id="insert" parameterType="com.church.model.RecordModel" keyProperty="id">
+		insert into c_record (
+			`bid`,
+			`uid`,
+			`flag_borrow`,
+			`gmt_borrow`,
+			`gmt_to_return`,
+			`flag_return`,
+			`gmt_return`,
+			`status`,
+			`gmt_create`,
+			`gmt_modify`)
+		values(#{bid},
+			#{uid},
+			#{flagBorrow},
+			#{gmtBorrow},
+			#{gmtToReturn},
+			#{flagReturn},
+			#{gmtReturn},
+			#{status},
+			now(),now())
+	</insert>
+	
+	<select id="queryOne" resultType="com.church.model.RecordModel">
+		select 
+			<include refid="default_column"/>
+		from c_record
+		where id = #{id}
+	</select>
+	
+	<select id="queryByUid" resultType="com.church.model.RecordModel">
+		select 
+			<include refid="default_column"/>
+		from c_record
+		where uid = #{uid}
+	</select>
+	
+	<select id="queryByBid" resultType="com.church.model.RecordModel">
+		select 
+			<include refid="default_column"/>
+		from c_record
+		where bid = #{bid}
+	</select>
+	
+	<update id="update" parameterType="com.church.model.RecordModel">
+		update c_record set
+			<if test="gmtToReturn != null and gmtToReturn != '' ">
+				gmt_to_return = #{gmtToReturn},
+			</if>
+			<if test="flagReturn != null and flagReturn != '' ">
+				flag_return = #{flagReturn},
+			</if>
+			<if test="gmtReturn != null and gmtReturn != '' ">
+				gmt_return = #{gmtReturn},
+			</if>
+			gmt_modified=now()
+			where id = #{id}
+	</update>
+	
+</mapper>

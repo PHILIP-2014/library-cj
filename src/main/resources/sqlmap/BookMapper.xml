@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.church.dao.BookDao" >
+	
+	<sql id="default_column">
+		`b_book`.`id`,
+		`b_book`.`name`,
+		`b_book`.`description`,
+		`b_book`.`type`,
+		`b_book`.`author`,
+		`b_book`.`editor`,
+		`b_book`.`total`,
+		`b_book`.`remain`,
+		`b_book`.`language`,
+		`b_book`.`status`,
+		`b_book`.`gmt_create` as gmtCreate,
+		`b_book`.`gmt_modify` as gmtModify
+	</sql>
+	
+	<insert id="insert" parameterType="com.church.model.BookModel" keyProperty="id">
+		insert into b_book (
+			`name`,
+			`description`,
+			`type`,
+			`author`,
+			`editor`,
+			`total`,
+			`remain`,
+			`language`,
+			`status`,
+			`gmt_create`,
+			`gmt_modify`)
+		values(#{name},
+			#{description},
+			#{type},
+			#{role},
+			#{author},
+			#{editor},
+			#{total},
+			#{remain},
+			#{language},
+			#{status},
+			now(),now())
+	</insert>
+	
+	<select id="queryOne" resultType="com.church.model.BookModel">
+		select 
+			<include refid="default_column"/>
+		from b_book
+		where id = #{id}
+	</select>
+	
+	<update id="update" parameterType="com.church.model.BookModel">
+		update b_book set
+			<if test="name != null and name != '' ">
+				name = #{name},
+			</if>
+			<if test="description != null and description != '' ">
+				description = #{description},
+			</if>
+			<if test="type != null and type != '' ">
+				type = #{type},
+			</if>
+			<if test="author != null and author != '' ">
+				author = #{author},
+			</if>
+			<if test="editor != null and editor != '' ">
+				editor = #{editor},
+			</if>
+			<if test="total != null and total != '' ">
+				total = #{total},
+			</if>
+			<if test="remain != null and remain != '' ">
+				remain = #{remain},
+			</if>
+			<if test="language != null and language != '' ">
+				language = #{language},
+			</if>
+			<if test="status != null and status != '' ">
+				status = #{status},
+			</if>
+			gmt_modified=now()
+			where id = #{id}
+	</update>
+	
+</mapper>
