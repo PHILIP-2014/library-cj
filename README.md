@@ -18,3 +18,4 @@ v1.0.0-BETA 2015-04-29 ``philip``
 
 1. user表简化修改
 2. 表的model、mapper、dao等手动添加
+3. 基础样式、基础js、登陆页面等

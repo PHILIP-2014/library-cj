@@ -11,14 +11,9 @@ PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
     </settings>
     
     <mappers>
-        <!-- <mapper resource="sqlmap/userAccountMapper.xml" />
-        <mapper resource="sqlmap/userProfileMapper.xml" />
-        <mapper resource="sqlmap/userInviteLogMapper.xml" />
-        <mapper resource="sqlmap/companyMapper.xml" />
-        <mapper resource="sqlmap/companyMemberMapper.xml" />
-        <mapper resource="sqlmap/contactMapper.xml" />
-        <mapper resource="sqlmap/teamMapper.xml" />
-        <mapper resource="sqlmap/teamMemberMapper.xml" /> -->
+        <mapper resource="sqlmap/UserMapper.xml" />
+        <mapper resource="sqlmap/BookMapper.xml" />
+        <mapper resource="sqlmap/RecordMapper.xml" />
     </mappers>
 
 </configuration>
