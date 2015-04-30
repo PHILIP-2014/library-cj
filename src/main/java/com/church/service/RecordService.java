@@ -1,5 +1,5 @@
 package com.church.service;
 
-public class RecordService {
+public interface RecordService {
 
 }

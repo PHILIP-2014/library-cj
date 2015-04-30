@@ -1,5 +1,5 @@
 package com.church.service;
 
-public class BookService {
+public interface BookService {
 
 }

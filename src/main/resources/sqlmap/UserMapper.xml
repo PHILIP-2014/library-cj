@@ -41,6 +41,13 @@
 		where id = #{id}
 	</select>
 	
+	<select id="queryByPhone" resultType="com.church.model.UserModel">
+		select 
+			<include refid="default_column"/>
+		from b_user
+		where phone = #{phone}
+	</select>
+	
 	<update id="update" parameterType="com.church.model.UserModel">
 		update b_user set
 			<if test="name != null and name != '' ">
