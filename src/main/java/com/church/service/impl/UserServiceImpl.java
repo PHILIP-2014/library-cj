@@ -6,14 +6,13 @@ import org.springframework.stereotype.Service;
 import com.church.dao.UserDao;
 import com.church.model.UserModel;
 import com.church.service.UserService;
-import com.church.utils.PwdEncoder;
 import com.church.utils.ServiceException;
 
 @Service("userService")
 public class UserServiceImpl implements UserService{
 	
-	@Autowired
-	private PwdEncoder pwdEncoder;
+	/*@Autowired
+	private PwdEncoder pwdEncoder;*/
 	@Autowired
 	private UserDao userDao;
 
@@ -26,9 +25,9 @@ public class UserServiceImpl implements UserService{
 		if(userModel.getStatus() != UserModel.STATUS_TRUE) {
 			throw new ServiceException("error.account.status.not.normal");
 		}
-		if(!pwdEncoder.isPasswordValid(userModel.getPassword(), user.getPassword())) {
+		/*if(!pwdEncoder.isPasswordValid(userModel.getPassword(), user.getPassword())) {
 			throw new ServiceException("error.account.password.invalid");
-		}
+		}*/
 		return userModel;
 	}
 	
