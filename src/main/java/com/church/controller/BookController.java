@@ -14,9 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class BookController {
 
 	@RequestMapping(method = RequestMethod.GET)
-	@ResponseBody
-	public void getList(HttpServletRequest request, HttpServletResponse response){
-		
+	public String getList(HttpServletRequest request, HttpServletResponse response){
+		return "book";
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
@@ -37,7 +36,7 @@ public class BookController {
 		
 	}
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value="/search", method = RequestMethod.GET)
 	@ResponseBody
 	public void search(HttpServletRequest request, HttpServletResponse response){
 		
