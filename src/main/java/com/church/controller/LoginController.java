@@ -24,7 +24,7 @@ public class LoginController {
 	@RequestMapping(method=RequestMethod.GET)
 	public String login(HttpServletRequest request){
 		
-		return null;
+		return "practice";
 	}
 
 	@RequestMapping(method=RequestMethod.POST)
