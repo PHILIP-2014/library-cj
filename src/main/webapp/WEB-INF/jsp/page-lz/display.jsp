@@ -1,18 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head lang="en">
 	<meta charset="UTF-8">
 	<title>practice</title>
-	<link rel="stylesheet" href="/css/reset.css"/>
-	<link rel="stylesheet" href="/css/bootstrap.css"/>
-	<link rel="stylesheet" href="/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css-lz/reset.css"/>
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<link rel="stylesheet" href="css-lz/style.css" type="text/css" />
 </head>
 <body>
 <div class="header">
 	<div class="logo">
-		<a href=""><img src="/img/logo.png" alt=""/></a>
+		<a href=""><img src="img/logo.png" alt=""/></a>
 	</div>
 	<div class="dropdown">
 		<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
@@ -25,7 +26,7 @@
 </div>
 <div class="content">
 	<div class="left-side">
-		<h2><a href="">MY STUDENTS</a></h2>
+		<a class="title" href="">MY STUDENTS</a>
 		<ul class="nav nav-stacked">
 			<li><a href="">Alision Baliey</a></li>
 			<li><a href="">Niocoie Ortiz</a></li>
@@ -34,12 +35,12 @@
 			<li><a href="">David Matthews</a></li>
 			<li><a href="">Lena Mcintosh</a></li>
 		</ul>
-		<h2><a href="">MY STUDENTS</a></h2>
-		<h2><a href="">MY STUDENTS</a></h2>
+		<a class="title" href="">MY STUDENTS</a>
+		<a class="title" href="">MY STUDENTS</a>
 	</div>
 	<div class="right-content">
 		<div class="right-top">
-			<img src="/img/icon_head.png" alt=""/>
+			<img src="img/icon_head.png" alt=""/>
 			<div class="button-group">
 				<button class="button">
 					Reading comprehension <span class="caret"></span>
@@ -124,9 +125,11 @@
 		</div>
 		<div class="progress">
 			<h2>Your progress</h2>
+			 <div id="loading">
+				 <strong></strong>
+			</div>
 		</div>
 	</div>
 </div>
-
 </body>
 </html>
