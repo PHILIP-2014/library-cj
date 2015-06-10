@@ -24,14 +24,13 @@ public class LoginController {
 	@RequestMapping(method=RequestMethod.GET)
 	public String login(HttpServletRequest request){
 		
-		return "practice";
+		return "login";
 	}
 
 	@RequestMapping(method=RequestMethod.POST)
 	@ResponseBody
 	public UserModel postLogin(HttpServletRequest request, HttpServletResponse response, 
 			UserModel user){
-	
 		try {
 			
 			return userService.doLogin(user);
