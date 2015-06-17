@@ -13,8 +13,13 @@ public class BookServiceImpl implements BookService{
 	@Autowired
 	private BookDao bookDao;
 	
-	public BookModel create(BookModel bookModel){
+	public BookModel doCreate(BookModel bookModel, Long uid){
 		bookDao.insert(bookModel);
 		return bookModel;
+	}
+
+	public BookModel doUpdate(BookModel bookModel, Long bid, Long uid) {
+		bookDao.update(bookModel);
+		return null;
 	}
 }

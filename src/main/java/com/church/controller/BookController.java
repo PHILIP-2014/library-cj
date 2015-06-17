@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,7 +17,7 @@ import com.church.service.BookService;
 
 @Controller
 @RequestMapping(value="/book")
-public class BookController {
+public class BookController extends BaseController {
 	
 	@Autowired
 	private BookService bookService;
@@ -30,7 +32,7 @@ public class BookController {
 	public BookModel create(HttpServletRequest request, HttpServletResponse response,
 			BookModel bookModel){
 		
-		return bookService.create(bookModel);
+		return bookService.doCreate(bookModel, getUid(request));
 	}
 	
 	@RequestMapping(method = RequestMethod.DELETE)
@@ -39,10 +41,12 @@ public class BookController {
 		
 	}
 	
-	@RequestMapping(method = RequestMethod.PUT)
+	@RequestMapping(value="/{id}", method = RequestMethod.PUT)
 	@ResponseBody
-	public void update(HttpServletRequest request, HttpServletResponse response){
+	public BookModel update(HttpServletRequest request, HttpServletResponse response,
+			@RequestBody BookModel bookModel, @PathVariable Long id){
 		
+		return bookService.doUpdate(bookModel, id, getUid(request));
 	}
 	
 	@RequestMapping(value="/search", method = RequestMethod.GET)
