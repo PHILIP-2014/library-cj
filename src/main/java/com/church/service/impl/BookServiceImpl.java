@@ -20,6 +20,11 @@ public class BookServiceImpl implements BookService{
 
 	public BookModel doUpdate(BookModel bookModel, Long bid, Long uid) {
 		bookDao.update(bookModel);
+		return bookModel;
+	}
+
+	public Boolean doDelete(Long bid, Long uid) {
+		bookDao.delete(bid);
 		return null;
 	}
 }

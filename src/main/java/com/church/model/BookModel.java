@@ -4,6 +4,10 @@ public class BookModel extends BaseModel {
 
 	private static final long serialVersionUID = 1L;
 	
+	public static final int STATUS_ON = 0;
+	public static final int STATUS_EMPTY = 1;
+	public static final int STATUS_OFF = 2;
+	
 	private String name;
 
 	private String desciption;

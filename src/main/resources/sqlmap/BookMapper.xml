@@ -18,6 +18,13 @@
 		`b_book`.`gmt_modify` as gmtModify
 	</sql>
 	
+	<select id="queryOne" resultType="com.church.model.BookModel">
+		select 
+			<include refid="default_column"/>
+		from b_book
+		where id = #{id}
+	</select>
+	
 	<insert id="insert" parameterType="com.church.model.BookModel" keyProperty="id">
 		insert into b_book (
 			`name`,
@@ -43,13 +50,6 @@
 			#{status},
 			now(),now())
 	</insert>
-	
-	<select id="queryOne" resultType="com.church.model.BookModel">
-		select 
-			<include refid="default_column"/>
-		from b_book
-		where id = #{id}
-	</select>
 	
 	<update id="update" parameterType="com.church.model.BookModel">
 		update b_book set
@@ -83,5 +83,14 @@
 			gmt_modified=now()
 			where id = #{id}
 	</update>
+	
+	<update id="delete" parameterType="java.lang.Long">
+		update b_book 
+		set
+			status = 2,
+			gmt_modified=now()
+		where id = #{id}
+	</update>
+	
 	
 </mapper>

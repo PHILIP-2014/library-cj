@@ -1,5 +1,7 @@
 package com.church.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -35,12 +37,6 @@ public class BookController extends BaseController {
 		return bookService.doCreate(bookModel, getUid(request));
 	}
 	
-	@RequestMapping(method = RequestMethod.DELETE)
-	@ResponseBody
-	public void delete(HttpServletRequest request, HttpServletResponse response){
-		
-	}
-	
 	@RequestMapping(value="/{id}", method = RequestMethod.PUT)
 	@ResponseBody
 	public BookModel update(HttpServletRequest request, HttpServletResponse response,
@@ -48,6 +44,16 @@ public class BookController extends BaseController {
 		
 		return bookService.doUpdate(bookModel, id, getUid(request));
 	}
+	
+	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
+	@ResponseBody
+	public Map<String, Object> delete(HttpServletRequest request, HttpServletResponse response, 
+			@PathVariable Long id){
+		
+		bookService.doDelete(id, getUid(request));
+		return null;
+	}
+	
 	
 	@RequestMapping(value="/search", method = RequestMethod.GET)
 	@ResponseBody

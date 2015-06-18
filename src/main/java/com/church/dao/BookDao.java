@@ -10,4 +10,6 @@ public interface BookDao {
 	
 	public Integer update(BookModel bookModel);
 	
+	public Integer delete(Long id);
+	
 }
