@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.church.model.BookModel;
+import com.church.model.BookCond;
 import com.church.service.BookService;
 
 
@@ -25,7 +26,9 @@ public class BookController extends BaseController {
 	private BookService bookService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String getList(HttpServletRequest request, HttpServletResponse response){
+	public String getList(HttpServletRequest request, HttpServletResponse response, 
+		BookCond bookCond){
+
 		return "book";
 	}
 	
