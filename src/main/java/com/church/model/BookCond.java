@@ -1,9 +1,6 @@
 package com.church.model;
 
 import java.io.Serializable;
-import java.util.Date;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 public class BookCond implements Serializable{
 
@@ -17,7 +14,7 @@ public class BookCond implements Serializable{
 		return type;
 	}
 	
-	public void setType(Long type) {
+	public void setType(Integer type) {
 		this.type = type;
 	}
 
