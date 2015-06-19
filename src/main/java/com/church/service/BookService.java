@@ -4,6 +4,8 @@ import com.church.model.BookModel;
 
 public interface BookService {
 
+	public BookModel queryModel(Long id, Long uid);
+	
 	public BookModel doCreate(BookModel bookModel, Long uid);
 	
 	public BookModel doUpdate(BookModel bookModel, Long bid, Long uid);

@@ -13,6 +13,12 @@ public class BookServiceImpl implements BookService{
 	@Autowired
 	private BookDao bookDao;
 	
+	@Override
+	public BookModel queryModel(Long id, Long uid) {
+		//TODO
+		return bookDao.queryOne(id);
+	}
+	
 	public BookModel doCreate(BookModel bookModel, Long uid){
 		bookDao.insert(bookModel);
 		return bookModel;
