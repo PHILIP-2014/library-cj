@@ -113,7 +113,7 @@
 		<dependency>
 			<groupId>org.beetl</groupId>
 			<artifactId>beetl-core</artifactId>
-			<version>2.2.2</version>
+			<version>2.2.3</version>
 		</dependency>
 	</dependencies>
 
