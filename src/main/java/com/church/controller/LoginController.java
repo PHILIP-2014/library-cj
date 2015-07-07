@@ -1,5 +1,7 @@
 package com.church.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.church.model.UserModel;
@@ -16,7 +19,7 @@ import com.church.utils.ServiceException;
 
 @Controller
 @RequestMapping(value="/login")
-public class LoginController {
+public class LoginController extends BaseController {
 	
 	@Autowired
 	private UserService userService;
@@ -29,22 +32,22 @@ public class LoginController {
 
 	@RequestMapping(method=RequestMethod.POST)
 	@ResponseBody
-	public UserModel postLogin(HttpServletRequest request, HttpServletResponse response, 
-			UserModel user){
+	public ModelAndView postLogin(HttpServletRequest request, HttpServletResponse response, 
+			UserModel user) throws IOException{
 		try {
-			
-			return userService.doLogin(user);
-			
+			//TODO init sessionUser
+			ModelAndView view = new ModelAndView("/dashboard");
+	        view.addObject("userModel", userService.doLogin(user));
+			return view;
 		} catch (ServiceException e) {
-			e.printStackTrace();
+			sendError(request, response, e.getMessage());
 		}
 		return null;
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest request, RedirectAttributes redirectAttr) {
-		request.getSession().setAttribute("user", null);
-		redirectAttr.addFlashAttribute("success", "登出成功");
-		return "redirect:/index.do"; //FIXME
+		removeSession(request, SESSION_KEY);
+		return "redirect:/login.htm"; //FIXME
 	}
 }
