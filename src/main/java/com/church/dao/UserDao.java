@@ -8,7 +8,7 @@ public interface UserDao {
 	
 	public UserModel queryOne(Long id);
 	
-	public UserModel queryByPhone(String phone);
+	public UserModel queryByName(String name);
 	
 	public Integer update(UserModel userModel);
 	

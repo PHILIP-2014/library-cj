@@ -9,5 +9,5 @@ public interface UserService {
 	public UserModel doLogin(UserModel user) throws ServiceException;
 
 	public SessionUser initSessionUser(UserModel user);
-	
+
 }

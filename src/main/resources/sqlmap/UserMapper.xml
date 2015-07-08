@@ -48,6 +48,13 @@
 		where phone = #{phone}
 	</select>
 	
+	<select id="queryByName" resultType="com.church.model.UserModel">
+		select 
+			<include refid="default_column"/>
+		from b_user
+		where name = #{name}
+	</select>
+	
 	<update id="update" parameterType="com.church.model.UserModel">
 		update b_user set
 			<if test="name != null and name != '' ">

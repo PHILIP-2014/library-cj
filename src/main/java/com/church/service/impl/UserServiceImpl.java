@@ -8,20 +8,22 @@ import org.springframework.stereotype.Service;
 import com.church.dao.UserDao;
 import com.church.model.UserModel;
 import com.church.service.UserService;
+import com.church.utils.PwdEncoder;
 import com.church.utils.ServiceException;
 import com.church.utils.SessionUser;
 
 @Service("userService")
 public class UserServiceImpl implements UserService{
 	
-	/*@Autowired
-	private PwdEncoder pwdEncoder;*/
+	@Autowired
+	private PwdEncoder pwdEncoder;
 	@Autowired
 	private UserDao userDao;
 
+	@Override
 	public UserModel doLogin(UserModel user) throws ServiceException {
 
-		UserModel userModel = queryByPhone(user.getPhone());
+		UserModel userModel = queryByName(user.getName());
 		if(userModel == null) {
 			throw new ServiceException("error.account.not.exist");
 		}
@@ -31,9 +33,13 @@ public class UserServiceImpl implements UserService{
 		/*if(!pwdEncoder.isPasswordValid(userModel.getPassword(), user.getPassword())) {
 			throw new ServiceException("error.account.password.invalid");
 		}*/
+		if(userModel.getPassword() == null || !userModel.getPassword().equals(user.getPassword())){
+			throw new ServiceException("error.account.password.invalid");
+		}
 		return userModel;
 	}
 	
+	@Override
 	public SessionUser initSessionUser(UserModel user) {
 
 		if(user == null){
@@ -47,7 +53,7 @@ public class UserServiceImpl implements UserService{
 		return sessionUser;
 	}
 	
-	public UserModel queryByPhone(String phone){
-		return userDao.queryByPhone(phone);
+	private UserModel queryByName(String name){
+		return userDao.queryByName(name);
 	}
 }

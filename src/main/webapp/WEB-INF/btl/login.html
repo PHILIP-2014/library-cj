@@ -18,17 +18,35 @@
 
       <form class="form-signin">
         <h3 class="form-signin-heading">请登陆</h3>
-        <input type="text" class="input-block-level" placeholder="Email address">
-        <input type="password" class="input-block-level" placeholder="Password">
+        <input type="text" class="input-block-level" placeholder="请输入登陆名" id="name" required>
+        <input type="password" class="input-block-level" placeholder="请输入密码" id="password" required>
         <label class="checkbox">
-          <input type="checkbox" value="remember-me"> 记住
+          <input type="checkbox" value="remember-me" name="remember"> 记住
         </label>
-        <button class="btn btn-large btn-primary" type="submit">登陆</button>
+        <input type="button" class="btn btn-large btn-primary" id="loginBtn" value="登陆">
       </form>
 
     </div>
 
-    <!-- <script src="../assets/js/jquery.js"></script> -->
-
   </body>
+  <script src="/js/jquery-2.1.4.js"></script>
+  <script type="text/javascript">
+  	(function(){
+  		$("#loginBtn").on('click',function(){
+	  		debugger;
+	  		var name = $("#name").val();
+	  		var password = $("#password").val();
+	  		$.ajax({
+	  		   type: "POST",
+	  		   url: "/login",
+	  		   data: {name:name,password:password},
+	  		   success: function(data){
+	  			 window.location.href='/main';
+	  		   }
+  			});
+  		});
+  	})();
+  		
+  </script>
+
 </html>
