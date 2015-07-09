@@ -30,10 +30,10 @@
 
   </body>
   <script src="/js/jquery-2.1.4.js"></script>
+  <script src="/js/main.js"></script>
   <script type="text/javascript">
   	(function(){
   		$("#loginBtn").on('click',function(){
-	  		debugger;
 	  		var name = $("#name").val();
 	  		var password = $("#password").val();
 	  		$.ajax({
@@ -41,12 +41,37 @@
 	  		   url: "/login",
 	  		   data: {name:name,password:password},
 	  		   success: function(data){
-	  			 window.location.href='/main';
-	  		   }
+	  		   },
+	  		   error: function(data){
+	  		   },
   			});
   		});
   	})();
-  		
+  	//TODO
+  	(function(jQuery, bootstrap, i18n){
+  		$(document).ajaxError(function(event, request, settings) {
+  			if(request.status == 500){
+  				var errorCode = request.getResponseHeader("WN_ERROR");
+  				noty({
+  					type:"error",
+  					text: i18n.get(errorCode),
+  					timeout:2500
+  				});
+  			}else if(request.status > 500){
+  				noty({
+  					type:"error",
+  					text: request.statusText,
+  					timeout:2500
+  				});
+  			}else if(request.status!=200){
+  				noty({
+  					type:"error",
+  					text: "Server Error["+request.status+"]:"+request.statusText,
+  					timeout:2500
+  				});
+  			}
+  		});
+  	})();	
   </script>
 
 </html>

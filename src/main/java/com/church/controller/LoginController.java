@@ -7,9 +7,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.church.model.UserModel;
@@ -30,17 +31,17 @@ public class LoginController extends BaseController {
 	}
 
 	@RequestMapping(method=RequestMethod.POST)
-	@ResponseBody
-	public UserModel postLogin(HttpServletRequest request, HttpServletResponse response, 
-			UserModel user) throws IOException {
+	public ModelAndView postLogin(HttpServletRequest request, HttpServletResponse response, 
+			ModelMap out, UserModel user) throws IOException {
 		try {
 			UserModel userModel = userService.doLogin(user);
 			setSessionUser(request, userService.initSessionUser(userModel));
-			return userModel;
+			out.put("user", userModel);
+			return new ModelAndView("/main");
 		} catch (ServiceException e) {
 			sendError(request, response, e.getMessage());
 		}
-		return null;
+		return new ModelAndView("/login");
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
