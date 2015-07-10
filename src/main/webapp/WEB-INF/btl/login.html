@@ -16,7 +16,7 @@
 
     <div class="container">
 
-      <form class="form-signin">
+      <form class="form-signin" >
         <h3 class="form-signin-heading">请登陆</h3>
         <input type="text" class="input-block-level" placeholder="请输入登陆名" id="name" required>
         <input type="password" class="input-block-level" placeholder="请输入密码" id="password" required>
@@ -30,48 +30,42 @@
 
   </body>
   <script src="/js/jquery-2.1.4.js"></script>
-  <script src="/js/main.js"></script>
+  <!-- <script src="/js/main.js"></script> -->
+  <script src="/js/noty/packaged/jquery.noty.packaged.js"></script>
   <script type="text/javascript">
-  	(function(){
-  		$("#loginBtn").on('click',function(){
-	  		var name = $("#name").val();
-	  		var password = $("#password").val();
-	  		$.ajax({
-	  		   type: "POST",
-	  		   url: "/login",
-	  		   data: {name:name,password:password},
-	  		   success: function(data){
-	  		   },
-	  		   error: function(data){
-	  		   },
-  			});
-  		});
-  	})();
-  	//TODO
-  	(function(jQuery, bootstrap, i18n){
-  		$(document).ajaxError(function(event, request, settings) {
-  			if(request.status == 500){
-  				var errorCode = request.getResponseHeader("WN_ERROR");
-  				noty({
-  					type:"error",
-  					text: i18n.get(errorCode),
-  					timeout:2500
-  				});
-  			}else if(request.status > 500){
-  				noty({
-  					type:"error",
-  					text: request.statusText,
-  					timeout:2500
-  				});
-  			}else if(request.status!=200){
-  				noty({
-  					type:"error",
-  					text: "Server Error["+request.status+"]:"+request.statusText,
-  					timeout:2500
-  				});
-  			}
-  		});
-  	})();	
+	function generate(type) {
+	    var n = noty({
+	        text        : type,
+	        type        : type,
+	        dismissQueue: false,
+	        layout      : 'topCenter',
+	        theme       : 'defaultTheme'
+	    });
+	    debugger;
+	    console.log(type + ' - ' + n.options.id);
+	    return n;
+	}
+	(function(){
+		$("#loginBtn").on('click',function(){
+			var name = $("#name").val();
+			var password = $("#password").val();
+			$.ajax({
+			   type: "POST",
+			   url: "/login",
+			   data: {name:name,password:password},
+			   success: function(data){
+				   window.location.href="/main";
+			   },
+			   error: function(data){
+				   var warning = generate('warning');
+				   $.noty.setText(warning.options.id, '用户名和密码不匹配！');
+				   setTimeout(function () {
+			            $.noty.close(warning.options.id);
+			        }, 1000);
+			   },
+			});
+		});
+	})();
   </script>
 
 </html>
