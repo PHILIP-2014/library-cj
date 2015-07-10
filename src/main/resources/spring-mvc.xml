@@ -46,7 +46,7 @@
     <bean id="viewResolver" class="org.beetl.ext.spring.BeetlSpringViewResolver">
         <property name="contentType" value="text/html;charset=UTF-8"/>
         <property name="prefix" value="/WEB-INF/btl/"/>
-        <property name="suffix" value=".html"/>
+        <property name="suffix" value=".btl"/>
     </bean>
 	
 	<!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射 -->

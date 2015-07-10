@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>首页</title>
+    <title>Library|书籍</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -29,8 +29,8 @@
           <div class="navbar-inner">
             <div class="container">
               <ul class="nav">
-                <li class="active"><a href="#">首页</a></li>
-                <li><a href="#">书籍</a></li>
+                <li><a href="/main">首页</a></li>
+                <li class="active"><a href="#">书籍</a></li>
                 <li><a href="#">个人记录</a></li>
                 <li><a href="#">推荐书目</a></li>
                 <li><a href="#">关于我们</a></li>
@@ -45,7 +45,7 @@
       <div class="jumbotron">
         <h1>Marketing stuff!</h1>
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <a class="btn btn-large btn-success" href="#">${user.name}</a>
+        <a class="btn btn-large btn-success" href="#">enter</a>
       </div>
 
       <hr>
