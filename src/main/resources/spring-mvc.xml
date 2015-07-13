@@ -80,5 +80,21 @@
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
 	</mvc:interceptors>
 	
+	<!-- 拦截器配置 -->  
+    <mvc:interceptors>
+		<!-- session超时 -->
+		<bean class="com.church.utils.MemberContextInterceptor">
+			<property name="loginUrl" value="/login" />
+			<property name="excludeUrls">
+				<list>
+					<value>/testApi*</value>
+					<value>/login*</value>
+					<value>/css*</value>
+					<value>/js*</value>
+					<value>/img*</value>
+				</list>
+			</property>
+		</bean>
+	</mvc:interceptors> 
 	
 </beans>
