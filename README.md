@@ -29,3 +29,10 @@ v1.0.0-BETA 2015-05-04 ``philip``
 
 1. 后端代码设计
 2. 基本功能开始
+
+v1.0.0-BETA 2015-07-14 ``philip``
+
+1. user表中status改为is_disable
+2. 登陆后端完成
+
+

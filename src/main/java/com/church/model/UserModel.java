@@ -4,7 +4,8 @@ public class UserModel extends BaseModel {
 
 	private static final long serialVersionUID = 1L;
 	
-	public static final int STATUS_TRUE = 1;
+	public static final int ROLE_NORMAL = 1;
+	public static final int ROLE_ADMIN = 2;
 	
     private String name;
 
@@ -14,7 +15,9 @@ public class UserModel extends BaseModel {
     
     private Integer role;
    
-    private Integer status;
+    private Boolean isVerify;
+    
+    private Boolean isDisable;
     
     public String getName() {
 		return name;
@@ -48,12 +51,20 @@ public class UserModel extends BaseModel {
 		this.phone = phone;
 	}
 
-	public Integer getStatus() {
-		return status;
+	public Boolean getIsVerify() {
+		return isVerify;
 	}
 
-	public void setStatus(Integer status) {
-		this.status = status;
+	public void setIsVerify(Boolean isVerify) {
+		this.isVerify = isVerify;
+	}
+
+	public Boolean getIsDisable() {
+		return isDisable;
+	}
+
+	public void setIsDisable(Boolean isDisable) {
+		this.isDisable = isDisable;
 	}
 
 }

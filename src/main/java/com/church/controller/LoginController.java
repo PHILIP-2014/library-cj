@@ -35,7 +35,7 @@ public class LoginController extends BaseController {
 			ModelMap out, UserModel user) throws IOException {
 		try {
 			UserModel userModel = userService.doLogin(user);
-			setSessionUser(request, userService.initSessionUser(userModel));
+			setSessionUser(request, initSessionUser(userModel));
 			out.put("user", userModel);
 			return new ModelAndView("/main");
 		} catch (ServiceException e) {

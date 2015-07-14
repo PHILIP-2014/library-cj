@@ -10,7 +10,7 @@
 		`b_user`.`password`,
 		`b_user`.`role`,
 		`b_user`.`is_verify` as isVerify,
-		`b_user`.`status`,
+		`b_user`.`is_disable` as isDisable,
 		`b_user`.`gmt_create` as gmtCreate,
 		`b_user`.`gmt_modify` as gmtModify
 	</sql>
@@ -22,7 +22,7 @@
 			`phone`,
 			`role`,
 			`is_verify`,
-			`status`,
+			`is_disable`,
 			`gmt_create`,
 			`gmt_modify`)
 		values(#{name},
@@ -30,7 +30,7 @@
 			#{phone},
 			#{role},
 			#{isVerify},
-			#{status},
+			#{isDisable},
 			now(),now())
 	</insert>
 	
@@ -53,6 +53,13 @@
 			<include refid="default_column"/>
 		from b_user
 		where name = #{name}
+	</select>
+	
+	<select id="countExist" resultType="java.lang.Integer">
+		select count(*) 
+		from b_user
+		where id = #{uid}
+		and role = #{role}
 	</select>
 	
 	<update id="update" parameterType="com.church.model.UserModel">

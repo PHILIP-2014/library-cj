@@ -1,7 +1,5 @@
 package com.church.service.impl;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +8,6 @@ import com.church.model.UserModel;
 import com.church.service.UserService;
 import com.church.utils.PwdEncoder;
 import com.church.utils.ServiceException;
-import com.church.utils.SessionUser;
 
 @Service("userService")
 public class UserServiceImpl implements UserService{
@@ -27,7 +24,7 @@ public class UserServiceImpl implements UserService{
 		if(userModel == null) {
 			throw new ServiceException("error.account.not.exist");
 		}
-		if(userModel.getStatus() != UserModel.STATUS_TRUE) {
+		if(userModel.getIsDisable()) {
 			throw new ServiceException("error.account.status.not.normal");
 		}
 		/*if(!pwdEncoder.isPasswordValid(userModel.getPassword(), user.getPassword())) {
@@ -40,20 +37,43 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
-	public SessionUser initSessionUser(UserModel user) {
-
-		if(user == null){
-			return null;
+	public UserModel doCreate(UserModel userModel, Long uid) throws ServiceException {
+		if(hasPermission(uid, UserModel.ROLE_ADMIN)){
+			userDao.insert(initModel(userModel));
 		}
-		SessionUser sessionUser = new SessionUser();
-		sessionUser.setLoginName(user.getName());
-		sessionUser.setUid(user .getId());
-		sessionUser.setGmtLogin(new Date());
-
-		return sessionUser;
+		return null;
 	}
 	
+	/**
+	 * 初始化user
+	 * @param userModel
+	 * @return
+	 */
+	private UserModel initModel(UserModel userModel){
+		userModel.setIsVerify(true);
+		userModel.setIsDisable(false);
+		return userModel;
+	}
+	
+	/**
+	 * 通过用户名查询用户
+	 * @param name
+	 * @return
+	 */
 	private UserModel queryByName(String name){
 		return userDao.queryByName(name);
+	}
+	
+	/**
+	 * 判断权限
+	 * @param uid
+	 * @param role
+	 * @return
+	 */
+	private Boolean hasPermission(Long uid, Integer role){
+		if(userDao.countExist(uid, role) > 0){
+			return true;
+		}
+		return false;
 	}
 }

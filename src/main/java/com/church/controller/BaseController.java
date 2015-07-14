@@ -2,6 +2,7 @@ package com.church.controller;
 
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -14,6 +15,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
+import com.church.model.UserModel;
 import com.church.utils.SessionUser;
 
 public class BaseController {
@@ -29,6 +31,25 @@ public class BaseController {
 		map.put("data", arg);
 		return map;
 	}
+	
+	/**
+	 * 初始化sessionUser
+	 * @param user
+	 * @return
+	 */
+	public SessionUser initSessionUser(UserModel user) {
+
+		if(user == null){
+			return null;
+		}
+		SessionUser sessionUser = new SessionUser();
+		sessionUser.setLoginName(user.getName());
+		sessionUser.setUid(user .getId());
+		sessionUser.setGmtLogin(new Date());
+
+		return sessionUser;
+	}
+
 	
 	/**
 	 * 获取当前登录用户uid
