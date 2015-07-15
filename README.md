@@ -35,4 +35,8 @@ v1.0.0-BETA 2015-07-14 ``philip``
 1. user表中status改为is_disable
 2. 登陆后端完成
 
+v1.0.0-BETA 2015-07-15 ``philip``
+
+1. login页面美化^_^
+2. test上传文件，补充上传所需的doc表
 

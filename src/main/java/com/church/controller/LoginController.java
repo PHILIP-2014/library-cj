@@ -27,7 +27,7 @@ public class LoginController extends BaseController {
 	@RequestMapping(method=RequestMethod.GET)
 	public String login(HttpServletRequest request) {
 		
-		return null;
+		return "login1";
 	}
 
 	@RequestMapping(method=RequestMethod.POST)
@@ -37,11 +37,11 @@ public class LoginController extends BaseController {
 			UserModel userModel = userService.doLogin(user);
 			setSessionUser(request, initSessionUser(userModel));
 			out.put("user", userModel);
-			return new ModelAndView("/main");
+			return new ModelAndView("main");
 		} catch (ServiceException e) {
 			sendError(request, response, e.getMessage());
 		}
-		return new ModelAndView("/login");
+		return new ModelAndView("login");
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)

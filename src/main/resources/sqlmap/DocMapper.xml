@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.church.dao.DocDao" >
+	
+	<sql id="default_column">
+		`c_doc`.`id`,
+		`c_doc`.`name`,
+		`c_doc`.`uid_upload` as uidUpload,
+		`c_doc`.`suffix`,
+		`c_doc`.`size`,
+		`c_doc`.`md5`,
+		`c_doc`.`is_trash` as isTrash,
+		`c_doc`.`uid_trash` as uidTrash,
+		`c_doc`.`gmt_create` as gmtCreate,
+		`c_doc`.`gmt_modify` as gmtModify
+	</sql>
+	
+	<select id="queryOne" resultType="com.church.model.DocModel">
+		select 
+			<include refid="default_column"/>
+		from c_doc
+		where id = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="com.church.model.DocModel" keyProperty="id">
+		insert into c_doc (
+			`name`,
+			`uid_upload`,
+			`suffix`,
+			`size`,
+			`md5`,
+			`is_trash`,
+			`uid_trash`,
+			`gmt_create`,
+			`gmt_modify`)
+		values(#{name},
+			#{uidUpload},
+			#{suffix},
+			#{size},
+			#{md5},
+			#{isTrash},
+			#{uidTrash},
+			now(),now())
+	</insert>
+	
+</mapper>

@@ -76,3 +76,22 @@ CREATE TABLE `c_record` (
   `gmt_modify` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for c_doc
+-- ----------------------------
+DROP TABLE IF EXISTS `c_doc`;
+CREATE TABLE `c_doc` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL COMMENT '文件名',
+  `uid_upload` bigint(20) DEFAULT NULL COMMENT '上传者',
+  `suffix` varchar(45) DEFAULT NULL COMMENT '文档后缀',
+  `size` bigint(20) NOT NULL COMMENT '文件大小',
+  `md5` varchar(45) NOT NULL COMMENT '文件md5值',
+  `is_trash` tinyint(1) DEFAULT '0' COMMENT '文件状态',
+  `uid_trash` bigint(20) DEFAULT NULL COMMENT '删除人',
+  `gmt_create` datetime DEFAULT NULL,
+  `gmt_modify` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10001 DEFAULT CHARSET=utf8;
+
