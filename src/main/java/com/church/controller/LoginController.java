@@ -27,7 +27,7 @@ public class LoginController extends BaseController {
 	@RequestMapping(method=RequestMethod.GET)
 	public String login(HttpServletRequest request) {
 		
-		return "login1";
+		return "login";
 	}
 
 	@RequestMapping(method=RequestMethod.POST)

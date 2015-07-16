@@ -90,6 +90,7 @@
 					<value>/testApi*</value>
 					<value>/login*</value>
 					<value>/css*</value>
+					<value>/fonts*</value>
 					<value>/js*</value>
 					<value>/img*</value>
 				</list>
