@@ -10,7 +10,6 @@
     <!-- Le styles -->
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
-
   </head>
 
   <body>
@@ -41,10 +40,12 @@
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         <a class="btn btn-large btn-success" href="#">${user.loginName}</a>
         
-		<button type="button" class="btn btn-default btn-lg">
-		  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
-		</button>
-		
+		<div class="file-box">
+		  <form action="/book/doUpload" method="post" enctype="multipart/form-data">
+		  	<input type="file" name="fileField" class="file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value" />
+		  	<input type="submit" name="submit" class="btn" value="上传文件" />
+		  </form>
+		</div>
       </div>
       <hr>
 
