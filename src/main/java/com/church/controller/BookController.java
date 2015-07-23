@@ -1,14 +1,10 @@
 package com.church.controller;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.church.model.BookCond;
 import com.church.model.BookModel;
@@ -30,8 +25,6 @@ import com.church.service.BookService;
 @Controller
 @RequestMapping(value="/book")
 public class BookController extends BaseController {
-	
-	private static Logger log = Logger.getLogger(BookController.class);
 	
 	@Autowired
 	private BookService bookService;
@@ -112,22 +105,11 @@ public class BookController extends BaseController {
 		return null;
 	}
 	
-	@RequestMapping(value="/upload", method=RequestMethod.GET)
-	public String showUpload(){
-		return "admin/upload";
-	}
-	
-	@RequestMapping(value="/doUpload", method=RequestMethod.POST)
-	public String doUpload(MultipartFile file) throws IOException{
-		if(file.isEmpty()){
-			
-		}
-		log.debug("Process file:{}" + file.getOriginalFilename());
-		FileUtils.copyInputStreamToFile(file.getInputStream(), new File("/home/philip/dev/testUp", System.currentTimeMillis()+file.getOriginalFilename()));
-		return "success";
-		
-	}
-	
+	/**
+	 * 搜索书籍
+	 * @param request
+	 * @param response
+	 */
 	@RequestMapping(value="/search", method = RequestMethod.GET)
 	@ResponseBody
 	public void search(HttpServletRequest request, HttpServletResponse response){
