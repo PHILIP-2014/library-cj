@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>用户管理</title>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="../../../s/css/common/common.css"/>
+    <link rel="stylesheet" href="../../../s/lib/jquery/jquery-ui/jquery-ui.css">
+    <link type="text/css" rel="stylesheet" href="../../../s/css/msglog/jbmsg.css"/>
+    <script src="../../../s/lib/jquery/1.8.3/jquery.js"></script>
+    <script src="../../../s/lib/jquery/jquery-ui/jquery-ui.js"></script>
+    <script src="../../../s/lib/select/select.js"></script>
+    <script src="../../../s/lib/select/jquery-hcheckbox.js"></script>
+  </head>
+  <body> 
+  <div class="jbmsg cf">
+    <div class="wrap">
+        <!-- 面包屑结束 -->
+        <div class="tableContent">
+          <h3 class="cf">
+            <div class="search fl">
+               <span class=" fl">
+                <var class="fl textVar">手机号码</var>
+                <var class="aricon fr">down</var>
+                  <ul>
+                  	<li>
+                  	  用户ID
+                  	</li>
+                    <li>
+                      姓名
+                    </li>
+                    <li>
+                      手机号码
+                    </li>
+                    <li>
+                      内容
+                    </li>
+                  </ul>
+               </span>
+               <input type="text" class="searchInput  fl">
+               <input type="button" class="btn fl">
+            </div>
+            <div class="page fr">
+              <div class="total fl">共找到<var>XXX</var>条信息</div>
+              <div class="paging fr">
+                  <a href="###" class="preve fl"></a>
+                  <span class="now fl"><var class="curr">3</var>/<var>13</var></span>
+                  <a href="###" class="fl next "></a>
+              </div>
+            </div>
+          </h3>
+          <table>
+            <tr>
+              <th><input type="checkbox" id="all"><label for="all"></label><span class="arrow arrowup">ID </span></th>
+              <th><span>姓名</span></th>
+              <th>手机号码</th>
+              <th><span>角色</span></th>
+              <th><span class="arrow">最近借阅时间</span></th>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="1"><label for="1"></label>620</td>
+              <td>王大锤</td>
+              <td>12376875645</td>
+              <td>普通</td>
+              <td>2015/06/05 10:52  </td>
+             </tr>
+            
+          </table>
+          <div class="btmbar cf">
+            <a href="###" class="del fl" >删除</a>
+            <div class="page fr">
+              <a href="javascript:void(0)">首页</a>
+              <a href="javascript:void(0)">上一页</a>
+              <a href="javascript:void(0)">1</a>
+              <a href="javascript:void(0)">2</a>
+              <a href="javascript:void(0)" class="active">3</a>
+              <span>...</span>
+              <a href="javascript:void(0)">84</a>
+              <a href="javascript:void(0)">下一页</a>
+              <a href="javascript:void(0)">尾页</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+   <div id="dialog1" class="dialog">
+    <div class="titleV cf"><span class="fl"></span><var class='fl'>删除</var></div>
+        <div class="formbox">      
+            <form>
+                <ul>
+                    <li>
+                       是否要发布这条信息？
+                    </li>
+                    <li>                        
+                        <a href="###" class="ok">确定</a>
+                        <a href="###" class="del">取消</a>
+                    
+                </ul>
+            </form>
+        </div>
+
+  </div> 
+  <div id="dialog" class="dialog">
+    <div class="titleV cf"><span class="fl"></span><var class='fl'>处理</var></div>
+        <div class="formbox">      
+            <form>
+                <ul>
+                    <li class="cf">
+                      <span class="ltitle fl">理由</span>
+                       <select name="" id="">
+                         <option value="">你好，请问一下。。。</option>
+                         <option value="">发布虚假信息1</option>
+                         <option value="">发布虚假信息2</option>
+                       </select>
+                    </li>
+                    <li class="cf">
+                      <span class="ltitle fl">其他理由</span>
+                      <textarea placeholder="请补充您的理由"></textarea></li>
+                    <li>                        
+                        <a href="###" class="ok">确定</a>
+                        <a href="###" class="del">取消</a>
+                    
+                </ul>
+            </form>
+        </div>
+
+  </div> 
+  </body>
+  <script src="../../../s/js/msglog/jbmsg.js"></script>
+</html>

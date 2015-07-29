@@ -1,8 +1,11 @@
 package com.church.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.church.condition.UserCond;
 import com.church.dao.UserDao;
 import com.church.model.UserModel;
 import com.church.service.UserService;
@@ -17,7 +20,6 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private UserDao userDao;
 
-	@Override
 	public UserModel doLogin(UserModel user) throws ServiceException {
 
 		UserModel userModel = queryByName(user.getName());
@@ -36,7 +38,6 @@ public class UserServiceImpl implements UserService{
 		return userModel;
 	}
 	
-	@Override
 	public UserModel doCreate(UserModel userModel, Long uid) throws ServiceException {
 		if(hasPermission(uid, UserModel.ROLE_ADMIN)){
 			userDao.insert(initModel(userModel));
@@ -44,6 +45,11 @@ public class UserServiceImpl implements UserService{
 		return null;
 	}
 	
+	public List<UserModel> queryAll(UserCond cond) throws ServiceException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	/**
 	 * 初始化user
 	 * @param userModel
@@ -76,4 +82,5 @@ public class UserServiceImpl implements UserService{
 		}
 		return false;
 	}
+
 }

@@ -1,0 +1,58 @@
+.user-table-container{
+    min-width: 1000px;
+}
+.user-table{
+    border: 1px solid rgb(231,231,231);
+    max-width: 100%;
+    border-collapse: collapse;
+}
+.user-table thead tr{
+    background: url(../../../s/img/userAndPic-manager/role_table_title.png) repeat;
+    height: 50px;
+}
+.user-table thead tr th{
+    vertical-align: middle;
+    border-right: 1px solid rgb(211,211,211);
+    font-weight: normal;
+}
+.user-table tbody img{
+    width: 38px;
+    height: 38px;
+}
+.user-table tbody tr td{
+vertical-align: middle;
+}
+.user-table>tbody>tr:nth-of-type(even){
+    background-color: #f9f9f9;
+}
+.user-table tbody tr:hover{
+    background-color: rgb(255,246,233);
+}
+.user-table .select-all{
+    margin: 0px;
+}
+.user-table .select-all>div{
+    padding-left: 20px;
+}
+.user-table .select-all>div a{
+    text-decoration: none;
+    color: #000000;
+}
+.user-dialog-header{
+    border-bottom: 1px solid #38ad6a;
+}
+.user-dialog-footer{
+    text-align: center;
+}
+.user-dialog-footer .submit span{
+    color: #38ad6a;
+}
+.user-dialog-footer .submit:hover{
+    border-color: #38ad6a;
+}
+.user-dialog-footer .cancel span{
+    color: red;
+}
+.user-dialog-footer .cancel:hover{
+    border-color: red;
+}

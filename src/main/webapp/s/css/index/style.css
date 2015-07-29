@@ -1,0 +1,123 @@
+img {
+	border: 0px;
+	vertical-align: middle;
+}
+.clear {
+	clear: both;
+}
+.ce {
+	display: block;
+	width: 100%;
+  font-size: 18px;
+  font-family: "Microsoft YaHei";
+  color:#888888;
+  background:rgb(90,90,90);
+}
+.ce li {
+	list-style-type: none;
+	position: relative;
+}
+.more {
+	margin-right: 25px;
+}
+.ce li a {
+	text-decoration: none;
+	outline: none;
+	blr: expression(this.onFocus=this.blur());
+	padding: 20px 20px 10px 40px;
+	display: block;
+	cursor: pointer;
+	font-size: 18px;
+	font-family: "Microsoft YaHei";
+	color: rgb(174, 174, 174);
+}
+.ce li a:hover {
+	background: rgb(73, 73, 73);
+	border-left: 3px solid #38ad6a;
+}
+.ce li .dqian {
+	background: none
+}
+.ce li .xz {
+	background:rgb(73, 73, 73);
+	border-left: 3px solid #38ad6a;
+}
+.er {
+	display: none;
+	width: 100%;
+	background:rgb(90,90,90);
+}
+.er li {
+	list-style-type: none;
+	width: 100%;
+	border: solid rgb(140, 140, 140);
+	border-width: 1px 0px 0px;
+}
+.er li a {
+	display: block;
+	padding: 10px 10px 10px 20px;
+	color: white;
+	background: none;
+	font-size: 18px;
+	font-family: "Microsoft YaHei";
+	color: rgb(174, 174, 174);
+}
+.er .e_li a {
+	text-decoration: none;
+	outline: none;
+	blr: expression(this.onFocus=this.blur());
+}
+.er li a:hover,
+.er li .sen_x {
+	background: rgb(73, 73, 73);
+}
+.er .e_li a:hover,
+.er .e_li .sen_x {
+	background: rgb(73, 73, 73);
+}
+.er .e_li li a {
+	background: none;
+}
+.er .e_li li a:hover {
+	background: rgb(249, 152, 49);
+}
+.er .e_li li .xuan {
+	background: rgb(249, 152, 49);
+}
+.more1 {
+	position: absolute;
+	right: 30px;
+	margin-top: 1px;
+}
+.ti {
+	width: 29px;
+	height: 29px;
+	float: left;
+	padding-top: 3px;
+	cursor: pointer;
+	text-align: center;
+	margin-right: 10px;
+	margin-top: 40px;
+	margin-left: 20px;
+	background: url(../images/11.png) no-repeat;
+}
+.inpu {
+	cursor: pointer;
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+	width: 29px;
+	height: 29px;
+}
+.tu1 {
+	width: 29px;
+	height: 29px;
+	float: left;
+	padding-top: 3px;
+	cursor: pointer;
+	text-align: center;
+	margin-right: 10px;
+	margin-top: 40px;
+	margin-left: 20px;
+	background: url(../images/22.png) no-repeat;
+}

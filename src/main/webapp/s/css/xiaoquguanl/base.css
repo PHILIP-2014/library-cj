@@ -1,0 +1,94 @@
+@CHARSET "UTF-8";
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin:0; padding:0; }
+body { font-size:12px; color:#777777; font-family:Verdana, Microsoft YaHei, Simsun; background:#fff; line-height:24px; }
+fieldset, img { border:0; }
+ol, ul { list-style:none; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+em { font-style:normal; }
+input, button, select, textarea { outline:none; }
+textarea { resize:none; }
+p{ text-align:justify; text-justify:distribute;}
+a { color: #666; text-decoration:none; }
+a:hover { color: #f60; text-decoration:none;outline:none;  }
+.mainWrap{width:98%;margin: 0 auto;}
+.mainContent{border:1px solid #e3e3e5;width:100%;padding-bottom: 70px; background-color:#f3f3f3;margin-left: 15px;text-align: center;}
+.xq_nav {height: 30px;font-size:14px;padding: 20px 0px;}
+.xiaoquArea span{font-size: 14px;margin-left: 10px;}
+.arr_fow{float: left;}
+
+/*添加小区  */
+
+.addXiaoqu p{margin-top:20px; }
+.xq_nav li{float: left;text-align:center;padding: 0px 15px;}
+.current_loc{color:#38ad6a;}
+.addXiaoqu input[type="text"]{margin-left: 10px; border: 1px solid #e3e3e5;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;border-radius:3px;width: 250px;height: 30px}
+.addXiaoqu select{width:50px;width: 100px;height: 30px;margin-left: 10px; }
+.addXiaoqu label{font-size:14px; }
+.addBtn{background-color: #38AD6A;color: #FFF;font-size: 15px;font-weight: 600;padding: 5px 10px 5px 20px;letter-spacing:10px; border-radius: 3px;}
+.markMap{font-size:14px;border: 1px solid #e3e3e5;color: #767c95;border-radius: 3px;padding: 6px 15px;margin-left: 10px;}
+
+/*小区列表  */
+.XiaoquList{background-color:#fff;}
+.wrapTitle{width:100%;line-height:60px;height: 60px;border:1px solid #e3e3e5;border-bottom:none;margin: 0 auto;   }
+.totalOrder{float: right;}
+.pageCtr{float: right;margin: 0px 30px;}
+.totalCount{color:#38ad6a; margin: 0px 10px;}
+.searchWrap{float: left;position: relative;top: 15px;left:20px}
+.searchWrap input[type="text"]{float: left;width:320px;height: 30px;border: 1px solid #e3e3e5;}
+.searchIcon{position:absolute;right:-9px; width:60px;height: 30px;background:#38ad6a url("../../../s/img/xiaoquguanl/seacrhIcon.png")center center no-repeat;background-size:20px 20px;border: 1px solid #38AD6A;border-radius:30px; }
+.selectXq{float:left;padding-right: 20px; border: 1px solid #e3e3e5;border-top-left-radius: 30px;border-bottom-left-radius: 30px;width: 50px;height: 30px;line-height: 30px;position: relative;}
+.selectXq span{cursor: pointer; background-color: #fff; position: absolute;width:100%;color:#38ad6a;top: 30px;display: none; }
+#currSelect{top:0px;display: block;background:url("../../../s/img/xiaoquguanl/seleDown.png")53px 12px no-repeat;  }
+table tr{height: 55px;}
+.XiaoquList table{width: 100%;margin:0 auto; border: 1px solid #e3e3e5; }
+.tab_head td{border-left:1px solid #e3e3e5;}
+.XiaoquList thead{background-color:#f3f3f3; }
+.listThead tr{border-top: 1px solid #e3e3e5;}
+.listFooter{margin-top:35px;}
+.Listpage{float: right;padding-right: 30px;}
+.pageIndex{display: inline-block;}
+.pageIndex span{cursor:pointer; display: inline-block;border: 1px solid #e3e3e5;width: 25px;height: 25px;text-align: center;border-radius:3px;margin-right:5px;line-height:25px;}
+.deleteBtn{padding:0px 10px; display: inline-block;border: 1px solid #e3e3e5;background-color:#f3f6fb;border-radius:5px;float: left;margin-left: 30px;}
+.currPagestyle{background-color:#38ad6a;color: #fff!important;border-color:#38ad6a!important;  }
+.spanHover{border-color:#38ad6a!important; }
+.xqSelect{width:80%!important;right:0px;  }
+.editXiaoqu{cursor:pointer;background: url("../../../s/img/xiaoquguanl/editXiQuGray.png")center center no-repeat;width: 50%;height: 50px;display: inline-block;}
+.editXiaoquLight{ background-image:url("../../../s/img/xiaoquguanl/editXiaoQuLight.png");}
+.removeXiaoqu{cursor:pointer;background:url("../../../s/img/xiaoquguanl/deleteXiaoQuGray.png")center center no-repeat;width: 50%;height: 50px;display: inline-block;}
+.removeXiaoquLight{background-image:url("../../../s/img/xiaoquguanl/deleteXiaoQuLight.png"); }
+tbody tr:nth-child(even){background-color:#f7f6f6; }
+.lignthTr{background-color:#fff6e9!important; }
+
+.prevCtr{cursor:pointer; background:url("../../../s/img/xiaoquguanl/leftPage.png") center center no-repeat;display:inline-block;display: inline-block;width: 12px;height: 20px;vertical-align: middle;margin-right:10px;}
+.prevCtrDisable{background-image:url("../../../s/img/xiaoquguanl/leftDisable.png"); }
+.prevCtrHover:hover{background-image:url("../../../s/img/xiaoquguanl/leftHover.png"); }
+
+.nextCtr{cursor:pointer;background:url("../../../s/img/xiaoquguanl/rightCtr.png")center center  no-repeat;display: inline-block;display: inline-block;width: 12px;height: 20px;vertical-align: middle;margin-left:10px; }
+.nextCtrDisabel{background-image:url("../../../s/img/xiaoquguanl/rightDisable.png");  }
+.nextCtrHover:hover{background-image:url("../../../s/img/xiaoquguanl/rightHover.png"); }
+
+.pageCtr span{display:inline-block;vertical-align: middle;font-size: 13px; }
+.IDquanxuan span,.IDClum span{display: inline-block;width: 20px;height: 20px;vertical-align: middle;border:1px solid #e3e3e5;border-radius: 3px;margin-right: 15px; }
+.IDquanxuan span:hover,.IDClum span:hover{border-color:#38ad6a; }
+span.dagou{border-color:#38ad6a;background:#38ad6a url("../../../s/img/xiaoquguanl/dagou.png")center center no-repeat;  }
+.paixu{background:url("../../../s/img/xiaoquguanl/shengxu.png")95px center no-repeat; }
+.daoxu2{background:url("../../../s/img/xiaoquguanl/daoxu.png")95px center no-repeat; }
+.IDClum{text-align: left;padding-left: 30px;}
+
+/* 地图 */
+.baiduMapWrap{width:800px;height: 600px;background-color: #f3f3f3; }
+.mapBtns{text-align: center;margin-top: 18px;border-radius: 3px; }
+#MapContainer{border-bottom:1px solid #38ad6a;border-top:1px solid #38ad6a;  }
+.mapBtns a{cursor:pointer; border:1px solid #38ad6a;padding: 2px 10px;margin-right: 10px;padding-left: 30px;font-size:15px;  }
+.mapTitle{line-height:40px;padding-left:10px;font-size: 15px;}
+.mapTitle span{display: inline-block;padding-left:25px;background:url("../../../s/img/xiaoquguanl/markGray.png")0 center no-repeat ;  }
+.querenBtn{background:url("../../../s/img/xiaoquguanl/querenBtn.png")5px center no-repeat;}
+.cancelBtn{background:url("../../../s/img/xiaoquguanl/cancelBtn.png")5px center no-repeat;border:1px solid #e3e3e5!important;}
+
+/*分页 */
+span.current{cursor: pointer;display: inline-block;border: 1px solid #38AD6A;width: 25px;height: 25px;text-align: center;border-radius: 3px;margin-right: 5px;line-height: 25px;background-color:#38AD6A;color:#fff;  }
+.pageHome,.lastPage,.disabled,.prevPage,.nextPage{cursor: pointer;display: inline-block;border: 1px solid #E3E3E5;width:45px;height: 25px;text-align: center;border-radius: 3px;margin-right: 5px;line-height: 25px;}
+.tcdNumber{cursor: pointer;display: inline-block;border: 1px solid #E3E3E5;width: 25px;height: 25px;text-align: center;border-radius: 3px;margin-right: 5px;line-height: 25px;}
+.tcdNumber:HOVER {border-color:#38ad6a;color:#666; }
+a.prevPage:hover,a.nextPage:hover{color:#666;}
+

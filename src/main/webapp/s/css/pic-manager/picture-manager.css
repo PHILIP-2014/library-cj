@@ -1,0 +1,118 @@
+.add-picture-div{
+    padding-left: 80px;
+}
+.add-picture-div .add-picture-btn{
+    border-radius: 25px;
+    background-color: #38ad6a;
+    color: #ffffff;
+    height: 40px;
+}
+.picture-table-container{
+    min-width: 1000px;
+}
+.picture-table{
+    border: 1px solid rgb(231,231,231);
+    max-width: 100%;
+    border-collapse: collapse;
+}
+.picture-table thead tr{
+    background: url(../../../s/img/adminManagement/role_table_title.png) repeat;
+    height: 50px;
+}
+.picture-table thead tr th{
+    vertical-align: middle;
+    border-right: 1px solid rgb(211,211,211);
+    font-weight: normal;
+}
+.picture-table tbody img{
+    width: 38px;
+    height: 38px;
+}
+.picture-table tbody tr td{
+    vertical-align: middle;
+}
+.picture-table>tbody>tr:nth-of-type(even){
+    background-color: #f9f9f9;
+}
+.picture-table tbody tr:hover{
+    background-color: rgb(255,246,233);
+}
+.picture-table .select-all{
+    margin: 0px;
+}
+.picture-table .select-all>div{
+    padding-left: 20px;
+}
+.picture-table .select-all>div a{
+    text-decoration: none;
+    color: #000000;
+}
+.picture-table tbody tr .operation-td a{
+    margin-right: 20px;
+    cursor: pointer;
+}
+.picture-table tbody tr .operation-td .publish{
+    color: rgb(57,164,254);
+}
+.picture-table tbody tr:hover .operation-td .publish{
+    border-color: rgb(57,164,254);
+}
+.picture-table tbody tr .operation-td .unpublish{
+    color: red;
+}
+.picture-table tbody tr:hover .operation-td .unpublish{
+    border-color: red;
+}
+.picture-table tbody tr .operation-td a span{
+    color: rgb(174,174,174);
+}
+.picture-table tbody tr:hover .operation-td a .edit-btn{
+    color: #38ad6a;
+}
+.picture-table tbody tr:hover .operation-td a .remove-btn{
+    color: red;
+}
+.picture-dialog-header{
+    border-bottom: 1px solid #38ad6a;
+}
+.picture-dialog-footer{
+    text-align: center;
+}
+.picture-dialog-footer .submit span{
+    color: #38ad6a;
+}
+.picture-dialog-footer .submit:hover{
+    border-color: #38ad6a;
+}
+.picture-dialog-footer .cancel span{
+    color: red;
+}
+.picture-dialog-footer .cancel:hover{
+    border-color: red;
+}
+.picture-dialog-form{
+    padding-right: 30px;
+}
+.picture-dialog-form label{
+    font-weight: normal;
+}
+.edit-table-input{
+    border: 1px solid #38ad6a;
+    border-radius: 4px;
+    width:30px;
+}
+.edit-table-input:focus{
+    border: 1px solid #38ad6a;
+}
+.edit-thumbnail{
+    margin: 5px 0;
+    position: relative;
+}
+.edit-thumbnail .close{
+    position: absolute;
+    top:0px;
+    float: right;
+}
+
+.dropdown-menu{width: 60px;font-size: 12px;border-radius: 0;border:none;min-width: 60px;margin: 0;left: 5px;top:39px;}
+.dropdown-menu > li > a{color: #38ad6a}

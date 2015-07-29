@@ -1,0 +1,130 @@
+.new-page-header{margin-top: 30px;min-width: 1000px;border: none;}
+.breadcrumb>li+li:before{content: ">\00a0";}
+.new-breadcrumb{background: #ffffff;}
+.new-breadcrumb a{color: #000000;}
+.new-breadcrumb .new-active a{color:#38ad6a;}
+.user-photo{padding-right: 40px;}
+.user-photo .img-div{float: right;}
+.user-photo img{width:40px;height:40px; margin-right: 10px;border-radius: 25px;}
+.new-navbar{min-width: 1000px;margin-bottom: 0px;}
+.new-navbar-bg{background: url(../../../s/img/userAndPic-manager/role_title.png) repeat;border-radius: 0px;}
+.navbar-right-content{margin:8px 40px 8px 0;padding: 6px 0;}
+.navbar-left .input-group .btn-dropdown{
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    background-color: #ffffff;
+    color: #38ad6a;
+}
+.navbar-left .input-group .btn-dropdown:hover{
+    background-color: #ffffff;
+    color: #38ad6a;
+}
+.navbar-form .input-group .search-input{
+    width:340px;
+    height: 40px;
+}
+.navbar-form .input-group .search-btn{
+    position: absolute;
+    left:389px;
+    top:0px;
+    z-index: 2;
+    border-radius: 25px;
+    height:40px;
+    width:70px;
+    background-color: #38ad6a;
+    vertical-align: middle;
+    padding-top: 10px;
+}
+.navbar-form .input-group .search-btn span{
+    color:#ffffff;
+}
+.new-navbar-form{
+    border: none;
+}
+.page-head{
+    float: right;
+}
+.page-head span{
+    padding: 0 3px;
+}
+.page-head .disabled{
+    color: rgb(215,215,215);
+    cursor: pointer;
+}
+.page-head .active{
+    color: #38ad6a;
+    cursor: pointer;
+}
+.page-number{
+    color: #38ad6a;
+}
+.total-count{
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #38ad6a;
+}
+.page-container{
+    min-width: 1000px;
+    margin-bottom: 30px;
+}
+.page-container .page-ul{
+    float: right;
+}
+.page-container .page-ul li{
+    border: solid 1px rgb(211,211,211);
+    border-radius: 3px;
+    padding: 5px 7px 5px 7px;
+    margin: 0 10px;
+}
+.page-container .page-ul li:hover{
+    border-color: #38ad6a;
+}
+.page-container .page-ul .page-active{
+    background-color: #38ad6a;
+}
+.page-container .page-ul .ellipsis{
+    border: none;
+}
+.page-container .page-ul li a{
+    text-decoration: none;
+    color: #000000;
+}
+.page-container .page-ul .page-active a{
+    color: #ffffff;
+}
+.page-container .page-ul .ellipsis a{
+    cursor: default;
+}
+.sort-asc{
+    background: url(../../../s/img/userAndPic-manager/sort_up.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    display: inline-block;
+}
+.sort-desc{
+    background: url(../../../s/img/userAndPic-manager/sort_down.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    display: inline-block;
+}
+.checkbox-default{
+    cursor: pointer;
+    margin-right: 5px;
+    float: left;
+    width: 22px;
+    height: 22px;
+    background: url(../../../s/img/userAndPic-manager/border.png) no-repeat;
+}
+.checkbox-default:hover{
+    background: url(../../../s/img/userAndPic-manager/hover.png) no-repeat;;
+}
+.checkbox-checked{
+    cursor: pointer;
+    margin-right: 5px;
+    float: left;
+    width: 22px;
+    height: 22px;
+    background: url(../../../s/img/userAndPic-manager/checked.png) no-repeat;
+}

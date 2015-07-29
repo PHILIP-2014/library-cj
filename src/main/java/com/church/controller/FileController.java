@@ -17,7 +17,7 @@ public class FileController {
 	private static Logger log = Logger.getLogger(BookController.class);
 	
 	@RequestMapping(value="/upload", method=RequestMethod.GET)
-	public String showUpload(){
+	public String index(){
 		return "admin/upload";
 	}
 	
@@ -35,6 +35,13 @@ public class FileController {
 		log.debug("Process file:{}" + file.getOriginalFilename());
 		FileUtils.copyInputStreamToFile(file.getInputStream(), new File("/home/philip/dev/testUp", System.currentTimeMillis()+file.getOriginalFilename()));
 		return "success";
+		
+	}
+	
+	/**
+	 * 下载文件
+	 */
+	public void download(){
 		
 	}
 }

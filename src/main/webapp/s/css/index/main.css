@@ -1,0 +1,21 @@
+.mainbody{
+}
+.left {
+	height: 100%;
+	background:rgb(90,90,90);
+}
+.lefttop {
+	height: 100px;
+	background: url(../../../s/img/index/logo.png);
+	background-repeat: no-repeat;
+	background-position:bottom center;
+}
+.list1 {
+	margin: 0px auto;
+	padding-top: 20px;
+	width: 350px;
+}
+
+.right {
+	background:#ffffff;
+}

@@ -1,0 +1,23 @@
+<div class="firsttop">
+	<span class="span1">管理后台&nbsp;&nbsp;>&nbsp;&nbsp;</span><span class="span2">系统主页</span>
+</div>
+<div class="firsttopright">
+	<img src="/s/img/index/philip.png">
+</div>
+<div class="firsttopright2" onmouseover="showmenu()">
+	<span class="span1">${user.loginName}</span>
+</div>
+<div class="multi_drop_menu" id="multi_drop_menu" onmouseleave="hidemenu()">
+	<span class="span1">${user.loginName}</span>
+	<ul>
+		<li>
+			<a href="#" onclick="hidemenu()" id="admin">admin</a>
+		</li>
+		<li>
+			<a href="#" onclick="hidemenu()">修改密码</a>
+		</li>
+		<li>
+			<a href="#" onclick="hidemenu()">退出登录</a>
+		</li>
+	</ul>
+</div>

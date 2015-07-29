@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+.page-header{margin-top:30px;border-bottom:none; min-width: 1000px;}
+.page-header .breadcrumb{background-color: #fff;}
+.page-header ol{margin-bottom:0;}
+.breadcrumb>li+li:before{content: ">\00a0";}
+.page-header .row .user_name{padding-right:40px;}
+.page-header .row .user_name img{height:42px;width:42px;border-radius:25px;margin-right:20px;}
+
+
+.main_boty .page-header .breadcrumb li a{color:#000;}
+.main_boty .page-header .breadcrumb li.active{color:rgb(56,173,106);}
+
+.role_title{background:url("images/role_title.png") repeat;border:1px solid #d3d3d3;min-width: 1000px;}
+.role_title form{width: 100%;min-width: 1000px;}
+.role_title form .add_role_btn{ border-radius:25px;background-color:rgb(56,173,106);color: #FFF; height:40px;line-height: 26px;}
+.role_title form .add_role_btn span{padding:0 10px;}
+.role_title form .page_role{float:right;vertical-align: middle; }
+.role_title form .page_role span,a{display:inline-block;}
+.role_title form .page_role .page_now,.page_separate,.page_next{padding:0 3px;}
+.role_title form .page_role .page_now{color:rgb(56,173,106);}
+.role_title form .page_role .page_color{ color:#aeaeae;}
+.role_title form .page_role .page_noClick{color:#38ad6a; }  /*color:#d7d7d7; */
+.role_title form .page_role .page_click:hover{color:#38ad6a;}
+.role_title form .page_role .page_click{color:#38ad6a;}
+.role_title form .count_num{margin-left:20px;}
+.role_title form .count_num span{padding:0 5px;color:rgb(56,173,106);}
+.role_title .navbar-left .dropdown{position: relative;z-index: 1;height:40px;}
+.role_title .navbar-left .dropdown .dropdown-toggle{width:105px;}
+.role_title .navbar-left .dropdown input{padding-right:60px;}
+.role_title .navbar-left .dropdown .search_items{border-radius: 25px 0px 0px 25px ;background-color: #FFF;color:rgb(56,173,106);}
+.role_title .navbar-left .dropdown .role_title_search{width: 340px;height:40px;}
+.role_title .navbar-left .dropdown .role_title_search_submit{width:70px;border-radius: 25px;position: absolute;left:389px;top:-1px;z-index: 2;height:41px;line-height: 30px;background-color:rgb(56,173,106);}
+.role_title .navbar-left .dropdown .role_title_search_submit span{color:#fff;}
+
+.role_title .col-xs-3{padding-left:60px;}
+
+
+.dropdown-menu{font-size: 12px;border-radius: 0;border:none;min-width: 60px;margin: 0;left: 5px;top:39px;}
+.dropdown-menu > li > a{color: #38ad6a;padding: 3px 10px}
+.checkbox input[type="checkbox"],
+.table tr td input[type="checkbox"]{margin: 10px 0px 0px -10px}
+input[type="checkbox"]+ label {
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  /*box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);*/
+  padding: 9px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+left: -15px;
+top:5px;}
+ .current [type="checkbox"] + label {
+  background-color: #fafafa;
+  border: 1px solid #38ad6a;}
+ input[type="checkbox"]:checked + label:after {
+  content: '.';
+  font-size: 14px;
+  position: absolute;
+  background: url(../../../s/img/msglog/righticon.png) no-repeat center center #38ad6a;
+  width:20px;height:20px;
+  top: -1px;
+  left: -1px;
+  line-height: 20px;
+  border-radius: 3px;
+  text-align: center;
+  color: #fff;
+  text-indent: -9999px}
+
+
+
+.table_role_list{padding:0px;min-width: 1000px;}
+.table_role_list .role_footer{vertical-align: middle;}
+.table_role_list .role_footer .row .col-md-10 ul{list-style: none;float:right;}
+.table_role_list .role_footer .row .col-md-10 ul li{float:left;border:1px solid #d3d3d3;margin:0 10px;border-radius:3px;padding:5px 7px;}
+.table_role_list .role_footer .row .col-md-10 ul  #page1 li{padding:0px;}
+.table_role_list .role_footer .row .col-md-10 ul  #page1 li a{padding:5px 7px;}
+.table_role_list .role_footer .row .col-md-10 ul li.page_active{background-color: rgb(56,173,106);border:1px solid rgb(56,173,106);}
+.table_role_list .role_footer .row .col-md-10 ul li.page_active a{color:#fff;}
+.table_role_list .role_footer .row .col-md-10 ul li:hover{border-color: rgb(56,173,106);}
+.table_role_list .role_footer .row .col-md-10 ul li a{color:rgb(112,112,112);}
+
+
+.table_role_list table{border:1px solid #d3d3d3;}
+.table_role_list table thead tr {background: url("images/role_table_title.png")repeat; height: 50px;}
+.table_role_list table thead tr th{padding-bottom: 13px;border-left:1px solid #d3d3d3;border-bottom:1px solid #d3d3d3;font-weight: normal;}
+.table_role_list table thead tr th div.checkbox{margin:0;padding-left:30px;}
+/*.table_role_list table head tr th div.checkbox label{margin-right:10px;}*/
+/*.table_role_list table thead tr th div.checkbox a{vertical-align: middle;}*/
+.table_role_list table thead tr th div.checkbox span.sort_up{display:inline-block; height:16px;width:16px;background: url("images/sort_up.png") no-repeat;color: rgb(56,173,106);}
+.table_role_list table thead tr th div.checkbox span.sort_down{display:inline-block; height:16px;width:16px;background: url("images/sort_down.png") no-repeat;color: rgb(56,173,106);}
+.table_role_list table thead tr th div.checkbox label span{padding-left:20px;}
+.modal.in .modal-dialog{width: 900px}
+.table_role_list table tbody tr:hover{background-color: rgb(255,246,233);}
+.table_role_list table tbody tr:hover a.role_edit{color:rgb(56,173,106);}
+.table_role_list table tbody tr:hover a.role_delete{color:rgb(238,110,107);}
+.table_role_list table tbody tr td{vertical-align: middle;}
+.table_role_list table tbody tr td div.checkbox{margin:0;padding-left:30px;}
+.table_role_list table tbody tr td div.checkbox label span{padding-left:20px;}
+.table_role_list table tbody tr td p{margin-bottom: 0px;}
+.table_role_list table tbody tr td.operation a{color:rgb(174,174,174);}
+
+.table_role_list table tbody tr td.operation a.role_delete {display:inline-block;margin-left: 30px;}
+
+.modal .modal-dialog{width:100%;}
+
+.modal .modal-dialog .modal-content .modal-footer button span{padding:0 17px 0 0;}
+.modal .modal-dialog .modal-content .modal-footer button.edit_finish span{color:rgb(56,173,106);}
+.modal .modal-dialog .modal-content .modal-footer button.edit_cancel span{color:rgb(253,108,141);}
+.modal .modal-dialog .modal-content .modal-footer button.delete_finish span{color:rgb(56,173,106);}
+.modal .modal-dialog .modal-content .modal-footer button.delete_cancel span{color:rgb(253,108,141);}
+
+.modal .modal-dialog .modal-content .modal-footer .edit_finish:hover{border:1px solid rgb(56,173,106);}
+.modal .modal-dialog .modal-content .modal-footer .edit_cancel:hover{border:1px solid rgb(253,108,141);}
+.modal .modal-dialog .modal-content .modal-footer .delete_finish:hover{border:1px solid rgb(56,173,106);}
+.modal .modal-dialog .modal-content .modal-footer .delete_cancel:hover{border:1px solid rgb(253,108,141);}
+
+.modal .modal-dialog .modal-content .modal-header{border-bottom-color: rgb(56,173,106);}
+.modal .modal-dialog .modal-content .modal-header .glyphicon-pencil{padding:0 10px;}
+.modal .modal-dialog .modal-content .modal-header .glyphicon-plus{padding:0 10px;}
+.modal .modal-dialog .modal-content .modal-header .glyphicon-exclamation-sign{padding:0 10px;color:red;}
+.modal .modal-dialog .modal-content .modal-body .form-horizontal{padding-right:30px;}
+.modal .modal-dialog .modal-content .modal-body .form-horizontal .form-group label{font-weight: normal;}
+.modal .modal-dialog .modal-content .modal-body .form-horizontal .check_box .check_box_items .row{padding:10px 15px; }
+.modal .modal-dialog .modal-content .modal-body .form-horizontal .role_name{border:1px solid #d3d3d3;width:100%;padding:7px 10px;text-align:left;}

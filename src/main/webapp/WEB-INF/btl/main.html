@@ -1,80 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Library|首页</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<html>
 
-    <!-- Le styles -->
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
-  </head>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="/s/css/common/common.css" />
+		<link rel="stylesheet" href="/s/css/index/main.css" />
+		<link rel="stylesheet" href="/s/css/index/first.css" />
+		<link rel="stylesheet" href="/s/css/index/style.css" />
+		<script type="text/javascript" src="/s/lib/jquery/1.11.3/jquery.js"></script>
+		<script type="text/javascript" src="/s/js/index/main.js"></script>
+		<script type="text/javascript" src="/s/lib/file-include/file_include.js"></script>
+		<title>Library|首页</title>
+	</head>
 
-  <body>
-
-    <div class="container">
-
-      <div class="masthead">
-        <h3 class="muted">Library</h3>
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-              <ul class="nav">
-                <li class="active"><a href="#">首页</a></li>
-                <li><a href="/book">书籍</a></li>
-                <li><a href="#">个人记录</a></li>
-                <li><a href="#">推荐书目</a></li>
-                <li><a href="#">关于我们</a></li>
-                <li><a href="#">联系我们</a></li>
-              </ul>
-            </div>
-          </div>
-        </div><!-- /.navbar -->
-      </div>
-
-      <!-- Jumbotron -->
-      <div class="jumbotron">
-        <h1>Marketing stuff!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <a class="btn btn-large btn-success" href="#">${user.loginName}</a>
-        
-		<div class="file-box">
-		  <form action="/book/doUpload" method="post" enctype="multipart/form-data">
-		  	<input type="file" name="fileField" class="file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value" />
-		  	<input type="submit" name="submit" class="btn" value="上传文件" />
-		  </form>
+	<body class="mainbody">
+		<!-- 引入左侧导航 star -->
+		<div class="leftBar" id='leftbar'>
+		 <script type="text/javascript">
+             file_include("/s/web/include/leftbar.html");
+         </script>
 		</div>
-      </div>
-      <hr>
+		<!-- 引入左侧导航 end -->
 
-      <!-- Example row of columns -->
-      <div class="row-fluid">
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-      </div>
+		<!-- 1 -->
+		<div class="centerBody">
+		     <div class="wrap">
+		        <!-- 面包屑开始 -->
+		        <div class="crumbs cf">
+		          <!-- 引入 头部导航  star -->
+					<script type="text/javascript">
+			             file_include("/s/web/include/header.html");
+			         </script>
+			        <!-- 引入 头部导航  end -->
+		        </div>
+		        <!-- 面包屑结束 -->
+		        <div class="right" id="iframe" id="right">
+			
+	  
+			<div class="iframebox">
+				<script type="text/javascript" language="javascript">
 
-      <hr>
+					    function iFrameHeight() {
 
-      <div class="footer">
-        <p>&copy; Company 2013</p>
-      </div>
+					        var ifm= document.getElementById("ifm");
 
-    </div> <!-- /container -->
+					        var subWeb = document.frames ? document.frames["ifm"].document :ifm.contentDocument;
 
-  </body>
+					            if(ifm != null && subWeb != null) {
+					            if(subWeb.body.scrollHeight<600){
+					            	 ifm.height=600
+					            }else{
+					            	ifm.height = subWeb.body.scrollHeight;
+					            }
+					            var pHeightt=subWeb.body.scrollHeight;
+					            var H;
+					            var wHeight=window.document.body.clientHeight;
+					            if (pHeightt>wHeight) {
+					            	h=pHeightt;
+					            }
+					            else{
+					            	h=wHeight;
+
+					            }
+					            document.getElementById("leftbar").style.height=h +80+'px';
+					            }
+
+   					 		}
+
+				</script>
+				<iframe src ="/s/web/homepage/index.html" frameborder="0" marginheight="0" marginwidth="0" frameborder="0" scrolling="no" id="ifm" name="ifm" onload="javascript:iFrameHeight('ifm');" width="100%"> 
+				</iframe> 
+	         	
+	         </div>
+			
+		</div>
+		      </div>   
+		    </div>
+		<!--  2-->
+		
+	</body>
+	<script type="text/javascript">
+		function showmenu() {
+			document.getElementById("multi_drop_menu").style.display = "block";
+		}
+
+		function hidemenu() {
+			document.getElementById("multi_drop_menu").style.display = "none";
+		}
+	</script>
+
 </html>

@@ -38,6 +38,7 @@
     <mvc:resources mapping="/img/**" location="/img/" cache-period="31556926"/>
     <mvc:resources mapping="/js/**" location="/js/" cache-period="31556926"/>
     <mvc:resources mapping="/css/**" location="/css/" cache-period="31556926"/>
+    <mvc:resources mapping="/s/**" location="/s/" cache-period="31556926"/>
 	
 	<!-- beetl解析器 -->
 	<bean id="beetlConfig" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration" init-method="init">
@@ -89,6 +90,7 @@
 				<list>
 					<value>/testApi*</value>
 					<value>/login*</value>
+					<value>/s*</value>
 					<value>/css*</value>
 					<value>/fonts*</value>
 					<value>/js*</value>
