@@ -42,11 +42,14 @@ public class UserServiceImpl implements UserService{
 		if(hasPermission(uid, UserModel.ROLE_ADMIN)){
 			userDao.insert(initModel(userModel));
 		}
-		return null;
+		return userModel;
 	}
 	
 	public List<UserModel> queryAll(UserCond cond) throws ServiceException {
-		// TODO Auto-generated method stub
+		if(!hasPermission(cond.getUid(), UserModel.ROLE_ADMIN)){
+			throw new ServiceException("error.user.forbid");
+		}
+		
 		return null;
 	}
 

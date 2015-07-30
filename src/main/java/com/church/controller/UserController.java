@@ -69,6 +69,7 @@ public class UserController extends BaseController {
 	public List<UserModel> list(HttpServletRequest request, HttpServletResponse response, 
 			@RequestBody UserCond cond) throws IOException{
 		try {
+			cond.setUid(getUid(request));
 			return userService.queryAll(cond);
 		} catch (ServiceException e) {
 			sendError(request, response, e.getMessage());
