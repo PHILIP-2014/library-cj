@@ -12,7 +12,7 @@
 					</li>
 				</ul>
 			</li>
-			<li> <a href="#"><img class="more" src="s/img/index/fygl.png">&nbsp;借阅管理<img class="more1" src="s/img/index/sj.png"/></a>
+			<li> <a href="#"><img class="more" src="/s/img/index/fygl.png">&nbsp;借阅管理<img class="more1" src="s/img/index/sj.png"/></a>
 				<ul class="er">
 					<li> <a href="##" _url="./s/web/esf/secondHandHousing.html" falg="true">借阅记录</a> </li>
 					<li class="e_li">
@@ -24,7 +24,9 @@
 					</li>
 				</ul>
 			</li>
-			<li> <a href="/user/list"><img class="more" src="s/img/index/yhgl.png">&nbsp;用户管理</a> </li>
+			<li id="userList"> 
+				<a href="javascript:;" _url="/s/web/userMg/userMg.html"><img class="more" src="/s/img/index/yhgl.png">&nbsp;用户管理</a> 
+			</li>
 			<li> 
 				<a href="##" _url="./s/web/msglog/msglog.html" falg="true"><img class="more" src="s/img/index/lyjl.png">&nbsp;留言记录</a> 
 			</li>
@@ -58,3 +60,26 @@
 			<div class="clear"></div>
 		</ul>
 	</div>
+<script type="text/javascript">
+	(function(){
+		$("#userList").on('click',function(){
+			var name = $("#name").val();
+			var password = $("#password").val();
+			$.ajax({
+			   type: "POST",
+			   url: "/login",
+			   data: {name:name,password:password},
+			   success: function(data){
+				   window.location.href="/main";
+			   },
+			   error: function(data){
+				   var warning = generate('warning');
+				   $.noty.setText(warning.options.id, '用户名和密码不匹配！');
+				   setTimeout(function () {
+			            $.noty.close(warning.options.id);
+			        }, 2000);
+			   },
+			});
+		});
+	})();
+</script>

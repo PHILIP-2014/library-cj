@@ -46,8 +46,7 @@ public class UserController extends BaseController {
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseBody
 	public UserModel create(HttpServletRequest request, HttpServletResponse response,
-			UserModel userModel) throws IOException {
-
+			@RequestBody UserModel userModel) throws IOException {
 		try {
 			return userService.doCreate(userModel, getUid(request));
 		} catch (ServiceException e) {
@@ -67,7 +66,7 @@ public class UserController extends BaseController {
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
 	public List<UserModel> list(HttpServletRequest request, HttpServletResponse response, 
-			@RequestBody UserCond cond) throws IOException{
+			UserCond cond) throws IOException{
 		try {
 			cond.setUid(getUid(request));
 			return userService.queryAll(cond);

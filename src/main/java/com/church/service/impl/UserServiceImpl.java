@@ -11,6 +11,7 @@ import com.church.model.UserModel;
 import com.church.service.UserService;
 import com.church.utils.PwdEncoder;
 import com.church.utils.ServiceException;
+import com.church.utils.StrUtils;
 
 @Service("userService")
 public class UserServiceImpl implements UserService{
@@ -39,9 +40,13 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	public UserModel doCreate(UserModel userModel, Long uid) throws ServiceException {
-		if(hasPermission(uid, UserModel.ROLE_ADMIN)){
-			userDao.insert(initModel(userModel));
+		if(lackParams(userModel)){
+			throw new ServiceException("error.user.require.param");
 		}
+		if(!hasPermission(uid, UserModel.ROLE_ADMIN)){
+			throw new ServiceException("error.user.forbid");
+		}
+		userDao.insert(initModel(userModel));
 		return userModel;
 	}
 	
@@ -49,8 +54,7 @@ public class UserServiceImpl implements UserService{
 		if(!hasPermission(cond.getUid(), UserModel.ROLE_ADMIN)){
 			throw new ServiceException("error.user.forbid");
 		}
-		
-		return null;
+		return userDao.queryAll(cond);
 	}
 
 	/**
@@ -81,6 +85,19 @@ public class UserServiceImpl implements UserService{
 	 */
 	private Boolean hasPermission(Long uid, Integer role){
 		if(userDao.countExist(uid, role) > 0){
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * 判断参数完整性
+	 * @param userModel
+	 * @return
+	 */
+	private Boolean lackParams(UserModel userModel){
+		if(StrUtils.isEmpty(userModel.getName()) || StrUtils.isEmpty(userModel.getPassword())
+				|| StrUtils.isEmpty(userModel.getPhone())){
 			return true;
 		}
 		return false;

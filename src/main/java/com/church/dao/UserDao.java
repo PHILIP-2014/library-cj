@@ -9,7 +9,7 @@ import com.church.model.UserModel;
 
 public interface UserDao {
 
-	public Long insert(UserModel userModel);
+	public Integer insert(UserModel userModel);
 	
 	public UserModel queryOne(Long id);
 	
