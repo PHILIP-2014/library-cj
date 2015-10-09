@@ -1,5 +1,6 @@
 # Library-cj
 个人学习项目之图书馆管理系统
+## 访问域名 : http://lib.xintuzaojiu.com
 
 v1.0.0-BETA 2015-04-24 ``philip``
 
