@@ -1,7 +1,6 @@
 # Library-cj
-个人学习项目之图书馆管理系统
 
-   * [lib.xintuzaojiu.com](http://lib.xintuzaojiu.com)
+[图书馆管理系统](http://lib.xintuzaojiu.com)
 
 v1.0.0-BETA 2015-04-24 ``philip``
 
