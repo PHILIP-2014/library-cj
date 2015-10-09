@@ -1,6 +1,6 @@
 # Library-cj
 
-[图书馆管理系统](http://lib.xintuzaojiu.com)
+ * [Welcome to my library](http://lib.xintuzaojiu.com) *
 
 v1.0.0-BETA 2015-04-24 ``philip``
 
