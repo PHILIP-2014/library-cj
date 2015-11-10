@@ -11,7 +11,7 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 	
 	<!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
-	<context:component-scan base-package="com.church.controller" />
+	<context:component-scan base-package="com.church.library.controller" />
 	
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="cacheSeconds" value="-1"/>
@@ -81,10 +81,10 @@
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
 	</mvc:interceptors>
 	
-	<!-- 拦截器配置 -->  
+	<!-- 拦截器配置 -->
     <mvc:interceptors>
 		<!-- session超时 -->
-		<bean class="com.church.utils.MemberContextInterceptor">
+		<bean class="com.church.library.utils.MemberContextInterceptor">
 			<property name="loginUrl" value="/login" />
 			<property name="excludeUrls">
 				<list>

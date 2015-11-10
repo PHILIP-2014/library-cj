@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com.church.dao.DocDao" >
+<mapper namespace="com.church.library.dao.DocDao" >
 	
 	<sql id="default_column">
 		`c_doc`.`id`,
@@ -16,14 +16,14 @@
 		`c_doc`.`gmt_modify` as gmtModify
 	</sql>
 	
-	<select id="queryOne" resultType="com.church.model.DocModel">
+	<select id="queryOne" resultType="com.church.library.model.DocModel">
 		select 
 			<include refid="default_column"/>
 		from c_doc
 		where id = #{id}
 	</select>
 	
-	<insert id="insert" parameterType="com.church.model.DocModel" keyProperty="id">
+	<insert id="insert" parameterType="com.church.library.model.DocModel" keyProperty="id">
 		insert into c_doc (
 			`name`,
 			`uid_upload`,

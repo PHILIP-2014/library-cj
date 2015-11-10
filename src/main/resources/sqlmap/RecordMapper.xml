@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com.church.dao.RecordDao" >
+<mapper namespace="com.church.library.dao.RecordDao" >
 	
 	<sql id="default_column">
 		`c_record`.`id`,
@@ -17,7 +17,7 @@
 		`c_record`.`gmt_modify` as gmtModify
 	</sql>
 	
-	<insert id="insert" parameterType="com.church.model.RecordModel" keyProperty="id">
+	<insert id="insert" parameterType="com.church.library.model.RecordModel" keyProperty="id">
 		insert into c_record (
 			`bid`,
 			`uid`,
@@ -40,28 +40,28 @@
 			now(),now())
 	</insert>
 	
-	<select id="queryOne" resultType="com.church.model.RecordModel">
+	<select id="queryOne" resultType="com.church.library.model.RecordModel">
 		select 
 			<include refid="default_column"/>
 		from c_record
 		where id = #{id}
 	</select>
 	
-	<select id="queryByUid" resultType="com.church.model.RecordModel">
+	<select id="queryByUid" resultType="com.church.library.model.RecordModel">
 		select 
 			<include refid="default_column"/>
 		from c_record
 		where uid = #{uid}
 	</select>
 	
-	<select id="queryByBid" resultType="com.church.model.RecordModel">
+	<select id="queryByBid" resultType="com.church.library.model.RecordModel">
 		select 
 			<include refid="default_column"/>
 		from c_record
 		where bid = #{bid}
 	</select>
 	
-	<update id="update" parameterType="com.church.model.RecordModel">
+	<update id="update" parameterType="com.church.library.model.RecordModel">
 		update c_record set
 			<if test="gmtToReturn != null and gmtToReturn != '' ">
 				gmt_to_return = #{gmtToReturn},

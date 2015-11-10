@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com.church.dao.BookDao" >
+<mapper namespace="com.church.library.dao.BookDao" >
 	
 	<sql id="default_column">
 		`b_book`.`id`,
@@ -18,14 +18,14 @@
 		`b_book`.`gmt_modify` as gmtModify
 	</sql>
 	
-	<select id="queryOne" resultType="com.church.model.BookModel">
+	<select id="queryOne" resultType="com.church.library.model.BookModel">
 		select 
 			<include refid="default_column"/>
 		from b_book
 		where id = #{id}
 	</select>
 	
-	<insert id="insert" parameterType="com.church.model.BookModel" keyProperty="id">
+	<insert id="insert" parameterType="com.church.library.model.BookModel" keyProperty="id">
 		insert into b_book (
 			`name`,
 			`description`,
@@ -51,7 +51,7 @@
 			now(),now())
 	</insert>
 	
-	<update id="update" parameterType="com.church.model.BookModel">
+	<update id="update" parameterType="com.church.library.model.BookModel">
 		update b_book set
 			<if test="name != null and name != '' ">
 				name = #{name},

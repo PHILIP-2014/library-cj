@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com.church.dao.UserDao" >
+<mapper namespace="com.church.library.dao.UserDao" >
 	
 	<sql id="default_column">
 		`b_user`.`id`,
@@ -15,7 +15,7 @@
 		`b_user`.`gmt_modify` as gmtModify
 	</sql>
 	
-	<insert id="insert" parameterType="com.church.model.UserModel" keyProperty="id">
+	<insert id="insert" parameterType="com.church.library.model.UserModel" keyProperty="id">
 		insert into b_user (
 			`name`,
 			`password`,
@@ -34,28 +34,28 @@
 			now(),now())
 	</insert>
 	
-	<select id="queryOne" resultType="com.church.model.UserModel">
+	<select id="queryOne" resultType="com.church.library.model.UserModel">
 		select 
 			<include refid="default_column"/>
 		from b_user
 		where id = #{id}
 	</select>
 	
-	<select id="queryAll" parameterType="com.church.condition.UserCond" resultType="com.church.model.UserModel">
+	<select id="queryAll" parameterType="com.church.library.condition.UserCond" resultType="com.church.library.model.UserModel">
 		select 
 			<include refid="default_column"/>
 		from b_user
 		where 1=1
 	</select>
 	
-	<select id="queryByPhone" resultType="com.church.model.UserModel">
+	<select id="queryByPhone" resultType="com.church.library.model.UserModel">
 		select 
 			<include refid="default_column"/>
 		from b_user
 		where phone = #{phone}
 	</select>
 	
-	<select id="queryByName" resultType="com.church.model.UserModel">
+	<select id="queryByName" resultType="com.church.library.model.UserModel">
 		select 
 			<include refid="default_column"/>
 		from b_user
@@ -69,7 +69,7 @@
 		and role = #{role}
 	</select>
 	
-	<update id="update" parameterType="com.church.model.UserModel">
+	<update id="update" parameterType="com.church.library.model.UserModel">
 		update b_user set
 			<if test="name != null and name != '' ">
 				name = #{name},
@@ -81,7 +81,7 @@
 			where id = #{id}
 	</update>
 	
-	<update id="updatePassword"  parameterType="com.church.model.UserModel">
+	<update id="updatePassword"  parameterType="com.church.library.model.UserModel">
 		update b_user set
 			password = #{password},
 			gmt_modified = now()
