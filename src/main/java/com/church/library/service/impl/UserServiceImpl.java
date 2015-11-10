@@ -30,10 +30,7 @@ public class UserServiceImpl implements UserService{
 		if(userModel.getIsDisable()) {
 			throw new ServiceException("error.account.status.not.normal");
 		}
-		/*if(!pwdEncoder.isPasswordValid(userModel.getPassword(), user.getPassword())) {
-			throw new ServiceException("error.account.password.invalid");
-		}*/
-		if(userModel.getPassword() == null || !userModel.getPassword().equals(user.getPassword())){
+		if(!pwdEncoder.isPasswordValid(userModel.getPassword(), user.getPassword())) {
 			throw new ServiceException("error.account.password.invalid");
 		}
 		return userModel;
